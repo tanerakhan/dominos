@@ -1,0 +1,28 @@
+{
+    "pizza": [
+        {   
+            "id": 1,
+            "image": "https://dpe-cdn.azureedge.net/api/medium/Coupon/Global/_T0006/NULL/434x404/TR?v=005f54da35c5d5ebb42efc9b4776c32b-1612964040000",
+            "name" : "Gel Al - 2 Büyük Boy Pizza + Coca-Cola Pet 1 lt",
+            "price": "54.99 TL"
+        },
+        {   
+            "id": 2,
+            "image": "https://dpe-cdn.azureedge.net/api/medium/Coupon/Global/_T797/NULL/434x404/TR?v=005f54da35c5d5ebb42efc9b4776c32b-1612964160000",
+            "name" : "Tek kişilik paketos",
+            "price": "25.99 TL"
+        },
+        {   
+            "id": 3,
+            "image": "https://dpe-cdn.azureedge.net/api/medium/Coupon/Global/_T944/NULL/434x404/TR?v=005f54da35c5d5ebb42efc9b4776c32b-1612964160000",
+            "name" : "2 Adet Ekmek Arası veya Dürümos",
+            "price": "24.99 TL"
+        },
+        {   
+            "id": 4,
+            "image": "https://dpe-cdn.azureedge.net/api/medium/Coupon/Global/_T0006/NULL/434x404/TR?v=005f54da35c5d5ebb42efc9b4776c32b-1612964160000",
+            "name" : "2 Büyük Boy Pizza",
+            "price": "67.99 TL"
+        }
+    ]
+}
