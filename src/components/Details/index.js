@@ -1,15 +1,23 @@
 import React from 'react'
 import {Details} from './style'
-export default function Detail() {
-    return (
-        <Details>
-                <div className="coverImage">
-                    <img src="https://dpe-cdn.azureedge.net/api/medium/Coupon/DetailNew/_T819/NULL/1170x400/TR?v=005f54da35c5d5ebb42efc9b4776c32b-1612986960000"/>
-                </div>
-                <div className="product">
-                    <h1> Ürün adı </h1>
-                    <span> 55.90 TL </span>
-                </div>
-        </Details>
-    )
+import { Redirect } from "react-router-dom";
+function DetailComp({ data }) {
+        let dataControl = data && Object.keys(data);
+        if(dataControl && dataControl.length > 0){
+                return (
+                        <Details>
+                                <div className="coverImage">
+                                        <img src={data.coverImage && data.coverImage}/> 
+                                </div>
+                                <div className="product">
+                                        <h1> {data.name && data.name} </h1>
+                                        <span> { data.price && data.price } </span>
+                                </div>
+                        </Details>
+                )
+        }else{
+                return <Details> <div style={{ textAlign: 'center', padding: '10px' }}> Sonuç bulunamadı </div> </Details>
+        }
 }
+
+export default DetailComp

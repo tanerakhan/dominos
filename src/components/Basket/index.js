@@ -1,18 +1,35 @@
 import React from 'react'
 import { BasketContainer } from './style'
-export default function Basket() {
-    return (
-            <BasketContainer>
-                <div className="basketInfos">
-                    <div className="image">
-                        <img src="https://dpe-cdn.azureedge.net/api/medium/Coupon/Global/_T0006/NULL/434x404/TR?v=005f54da35c5d5ebb42efc9b4776c32b-1612964040000"/>
-                    </div>
-                    <div className="productInfos">
-                        <h5>Ürün adı</h5>
-                        <span>Açıklama</span>
-                        <span>55,90 TL</span>
-                    </div>
-                </div>
-            </BasketContainer>
-    )
+import { useHistory } from "react-router-dom";
+export default function Basket({item}) {
+    let basketSameItemRemove = new Set(item);
+    let itemTo = Array.from(basketSameItemRemove);
+    let history = useHistory();
+    function toProduct(id){
+        history.push(`/detay/${id}`);
+    }
+    if(itemTo.length > 0){
+        return (
+            <>
+            {
+                itemTo.map(({id, coverImage, image, name, price}) => (
+                    <BasketContainer onClick={ () => toProduct(id) } key={id}>
+                        <div className="overlay" style={{ backgroundImage: `url(${coverImage})`}}></div>
+                        <div className="basketInfos">
+                            <div className="image">
+                                <img src={image}/>
+                            </div>
+                            <div className="productInfos">
+                                <h5>{name}</h5>
+                                <span>{price}</span>
+                            </div>
+                        </div>
+                    </BasketContainer>
+                ))
+            }
+            </>
+        )
+    }else{
+            return <BasketContainer> <div style={{ textAlign: 'center', padding: '10px' }}> Sonuç bulunamadı </div> </BasketContainer>
+    }
 }

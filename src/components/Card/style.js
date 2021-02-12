@@ -12,17 +12,20 @@ const Card = styled.div`
                 text-align: center;
                 display: block;
             }
+            img{
+                min-height: 210px;
+            }
             h5{
                 padding: 20px 20px 0 20px;
                 font-size: 18px;
-                font-weight: 800;
+                font-weight: 700;
                 min-height: 90px;
             }
             span{
                 font-size: 2em;
                 padding: 20px;
                 color: #e4213f;
-                font-weight: 800;
+                font-weight: 700;
             }
             small{
             }
